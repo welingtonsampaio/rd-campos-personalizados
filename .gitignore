@@ -4,7 +4,6 @@
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
-/public
 /data
 
 # minimal Rails specific artifacts
