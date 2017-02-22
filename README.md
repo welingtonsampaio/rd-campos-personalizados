@@ -1,78 +1,66 @@
-# RD - 
+# RD - Custom Fields
 
-[![build status](https://gitlab.com/alboom/panel-ruby/badges/master/build.svg)](https://gitlab.com/alboom/panel-ruby/commits/master)  [![coverage report](https://gitlab.com/alboom/panel-ruby/badges/master/coverage.svg)](https://gitlab.com/alboom/panel-ruby/commits/master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/welingtonsampaio/rd-campos-personalizados.svg)](https://gemnasium.com/github.com/welingtonsampaio/rd-campos-personalizados)[![Code Climate](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/gpa.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados)[![Test Coverage](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/coverage.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/coverage)
 
-Implementação do painel feito em Ruby on Rails.
+This design is a step of the RD Selective Process.
 
-## Requerimentos
+To understand everything that was done. Read [History.md](https://github.com/welingtonsampaio/rd-campos-personalizados/blob/master/History.md), in it I tell the day-to-day development process
 
-O projeto pode ter seu desenvolvimento realizado através do docker ou em um ambiente de desenvolvimento UNIX (MacOS ou Linux)
+## Demo
 
-* Docker Toolbox ([Instaladores](https://www.docker.com/products/docker-toolbox) e [instruções para instalação em Linux](https://docs.docker.com/engine/installation/linux/))
-* Ruby 2.3.3
-* MySQL
+Hosted in [Heroku](https://heroku.com) follow this link: [https://rd-campos-personalizados.herokuapp.com](https://rd-campos-personalizados.herokuapp.com)
 
-## Instalação pelo Docker
+Autofill user login ;).
 
-Após clonar o repositório, execute os seguintes comandos para iniciar a aplicação:
+## Requirements
+
+The project can be developed through a UNIX development environment (MacOS or Linux)
+
+* Ruby 2.2.3+
+* Postgres
+* Yarn
+
+## Environment
+
+Some variables that you must configure before you start writing your lines of code.
 
 ```bash
-docker-compose up
-``` 
-
-Isso irá criar a imagem do docker e executar a instalação das gems, assim como iniciar os serviços que a aplicação depende (como banco de dados, por exemplo).
-
-Apesar de iniciar, o banco de dados, este comando não executa a criação ou migrations do banco de dados, por isso, em outro terminal, deve ser executado o comando:
-
-```bash
-docker-compose run web rails db:create db:migrate
+export DBHOST = '127.0.0.1'          # Optional
+export DBPORT = 5432                 # Optional
+export DBUSERNAME = 'sampaio'        # Optional
+export DBPASSWORD = ''               # Optional
+export DBDATABASE = 'rd_development' # Required
 ```
 
-Feio, isso, a aplicação estará pronta para ser desenvolvida e estará sendo executada em  ```http://192.168.99.100:3000/```
 
-### Passo adicional para windows
+## Front-End
 
-Por enquanto, não existe suporte para execução do comando ```docker-compose run``` no windows. Assim, uma solução encontrada é
-executar os comandos através de um wrapper. Insira a função abaixo em seu ```~/.bash_profile``` 
+To compile and run the front end files, follow the steps below:
 
 ```bash
-function dockerrun() {
-    docker exec -ti $(docker ps | grep $1 | cut -d " " -f1) "${@:2}"
-}
+rm -rf public/*
+cd client
+yarn install
+yarn start
 ```
 
-E você poderá executar os comandos como:
-
-```bash
-dockerrun bundle exec rspec
-```
+These commands will clean the contents of the public folder. And start the webpack in watch mode to compile the files when necessary.
 
 ## Testes
 
-Esta aplicação utiliza __RSpec__ para seu desenvolvimento, e __RuboCop__ para validação com o guia de estilos e boas práticas Ruby. Para executar os testes utilize os seguintes comandos:
-
-#### Docker
-```
-$ docker-compose run web bundle exec rspec
-$ docker-compose run webbundle exec rubocop
-```
+This application uses __RSpec__ for development and __RuboCop__ for validation with the Ruby style guide and good practices. To run the tests use the following commands:
 
 #### Local
 ```
-bundle exec rspec
+bundle exec rspec spec
 bundle exec rubocop
 ```
 
-## Execução Local
-A aplicação possui suporte ao __Guard__, assim a mesma pode ser iniciada utilizando o seguinte comando:
+## Guard
+The application supports __Guard__ and can be started using the following command:
 
 ```
 $ bundle exec guard
 ```
 
-O guard vem com os módulos __rails, rspec__, e __bundle__  ou seja, uma vez executando o guard, o servidor será reiniciado, executará os testes, instalará gems e fará migrações no banco de dados sempre que necessário.
-
-
-## Contribuição
-
-Este projeto é desenvolvido através de forks do projeto principal e requisição de __merge requests__ uma vez que cada feature é concluida. Para mais detalhes, verifique o [guia de contribuição](https://gitlab.com/alboom/panel-ruby/raw/master/CONTRIBUTING.md).
+The guard comes with the __rails, rspec__, and __bundle__ modules, running the guard, the server will restart, run the tests, install gems and migrate to the database whenever necessary.
