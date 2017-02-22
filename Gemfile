@@ -14,6 +14,7 @@ gem 'devise_token_auth'
 gem 'pg'
 gem 'pundit'
 gem 'rabl'
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'listen', '~> 3.0.5'
