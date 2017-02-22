@@ -1,2 +1,2 @@
 web: bundle exec puma -C config/puma.rb
-client: cd client && yarn install && yarn run deploy:prod
+client: mkdir -p public || true && cd client && yarn install && yarn run deploy:prod
