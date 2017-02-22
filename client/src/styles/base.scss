@@ -1,0 +1,154 @@
+///
+// Project: Boom UI
+//
+// Component: 12 Columns Grid
+// Last update: 2016/12/06
+///
+
+
+// # Variables
+$grid-container: 1200px;
+$grid-collumns: 12;
+$grid-gutter: 15px;
+
+
+// # Base
+.container {
+  width: $grid-container;
+  margin: auto;
+
+  &:before,
+  &::after {
+    display: table;
+    clear: both;
+    content: ' ';
+  }
+}
+
+.row {
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+
+// # Collumns
+@for $x from 1 through $grid-collumns {
+  .col-#{$x} {
+    float: left;
+    width: 100% / $grid-collumns * $x;
+    padding-right: $grid-gutter;
+    padding-left: $grid-gutter;
+  }
+}
+
+
+
+// # Container Settings
+@media screen and (max-width: $grid-container) {
+  .container {
+    width: 100%;
+    padding-right: $grid-gutter;
+    padding-left: $grid-gutter;
+  }
+}
+
+
+
+// # Responsive Collumns - 768px
+@media screen and (max-width: 768px) {
+  @for $x from 1 through $grid-collumns {
+    .col-768-#{$x} {
+      float: left;
+      width: 100% / $grid-collumns * $x;
+      padding-right: $grid-gutter;
+      padding-left: $grid-gutter;
+    }
+  }
+}
+
+
+
+// # Responsive Collumns - 480px
+@media screen and (max-width: 767px) {
+  @for $x from 1 through $grid-collumns {
+    .col-480-#{$x} {
+      float: left;
+      width: 100% / $grid-collumns * $x;
+      padding-right: $grid-gutter;
+      padding-left: $grid-gutter;
+    }
+  }
+}
+
+
+
+// Loading
+.contentLoaderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  background-color: #fff;
+  opacity: .7;
+}
+
+
+// # Colors
+$colors: (
+  lt-green: #d5e8d0,
+  green: #92c25a,
+  dk-green: #46ae70,
+
+  lt-violet: #dcd1df,
+  violet: #7b67a9,
+  dk-violet: #524894,
+
+  lt-blue: #d3ebf1,
+  blue: #87cfe2,
+  dk-blue: #48bdd6,
+
+  lt-yellow: #f8f6d2,
+  yellow: #edea87,
+  dk-yellow: #fcd238,
+
+  lt-red: #f8d9d2,
+  red: #eb7760,
+  dk-red: #e85035,
+
+  lt-gold: #ebe3c9,
+  gold: #ae9b58,
+  dk-gold: #926f2a,
+
+  grey-100: #f1f1f1,
+  grey-200: #eaeaea,
+  grey-300: #dfdfdf,
+  grey-400: #c5c5c5,
+  grey-500: #585858,
+  grey-600: #3a3a3a,
+  grey-700: #212121,
+  grey-800: #181818,
+
+  white: #ffffff,
+  black: #000000
+);
+@each $name, $color in $colors {
+  .c-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}

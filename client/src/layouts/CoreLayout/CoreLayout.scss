@@ -1,0 +1,8 @@
+.viewport {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 345px);
+  height: calc(100vh - 62px);
+  vertical-align: top;
+  overflow-y: auto;
+}

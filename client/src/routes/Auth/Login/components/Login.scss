@@ -1,0 +1,18 @@
+// # Login Background
+.LoginBackground {
+  position: relative;
+  height: 100%;
+  background-color: #262626;
+}
+
+.LoginBox {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.LoginActions {
+  margin-top: 25px;
+}
