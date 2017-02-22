@@ -1,6 +1,6 @@
 # RD - Custom Fields
 
-[![Dependency Status](https://gemnasium.com/badges/github.com/welingtonsampaio/rd-campos-personalizados.svg)](https://gemnasium.com/github.com/welingtonsampaio/rd-campos-personalizados)[![Code Climate](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/gpa.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados)[![Test Coverage](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/coverage.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/coverage)
+[![Build Status](https://travis-ci.org/welingtonsampaio/rd-campos-personalizados.svg?branch=master)](https://travis-ci.org/welingtonsampaio/rd-campos-personalizados) [![Dependency Status](https://gemnasium.com/badges/github.com/welingtonsampaio/rd-campos-personalizados.svg)](https://gemnasium.com/github.com/welingtonsampaio/rd-campos-personalizados) [![Code Climate](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/gpa.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados) [![Test Coverage](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/badges/coverage.svg)](https://codeclimate.com/github/welingtonsampaio/rd-campos-personalizados/coverage)
 
 This design is a step of the RD Selective Process.
 
