@@ -4,8 +4,8 @@ default: &default
   port: <%= ENV.fetch('DBPORT') { 5432 } %>
   encoding: unicode
   pool:     5
-  username: <%= ENV.fetch('MYSQL_USERNAME') { 'sampaio' } %>
-  password: <%= ENV.fetch('MYSQL_ROOT_PASSWORD') { '' } %>
+  username: <%= ENV.fetch('DBUSERNAME') { 'sampaio' } %>
+  password: <%= ENV.fetch('DBPASSWORD') { '' } %>
   template: template0
 
 development:
