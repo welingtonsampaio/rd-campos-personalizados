@@ -1,4 +1,4 @@
-if (ARGV.last.start_with?('spec') && ARGV.last == 'spec') || ENV.fetch('TRAVIS_RUNNING')
+if (ARGV.last.start_with?('spec') && ARGV.last == 'spec') || ENV.fetch('TRAVIS_RUNNING') { false }
   require 'simplecov'
   SimpleCov.start 'rails' do
     add_filter 'vendor/ruby'
